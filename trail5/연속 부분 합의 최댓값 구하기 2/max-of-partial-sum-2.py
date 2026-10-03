@@ -1,21 +1,16 @@
-import sys
-
-INT_MIN = -sys.maxsize
-
 n = int(input())
-arr = [0] + list(map(int, input().split()))
+a = [0] + list(map(int, input().split()))
+max_val = -float("inf")
 
-ans = INT_MIN
-
-sum_of_nums = 0;
+t_ans = 0;
 
 for i in range(1, n + 1):
-    if sum_of_nums < 0:
-        sum_of_nums = arr[i]
-    
+    if t_ans < 0:
+        t_ans = a[i]
+        
     else:
-        sum_of_nums += arr[i]
+        t_ans += a[i]
     
-    ans = max(ans, sum_of_nums)
+    max_val = max(max_val, t_ans)
 
-print(ans)
+print(max_val)
